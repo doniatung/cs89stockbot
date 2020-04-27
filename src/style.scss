@@ -4,10 +4,14 @@ body, html {
     height: 100%;
   }
 
-  .logo {
-    background-image: url('img/image.jpg');
-    width: 100px;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
+  .active {
+    color: grey;
   }
+
+  // .logo {
+  //   background-image: url('img/image.jpg');
+  //   width: 100px;
+  //   height: 100px;
+  //   background-repeat: no-repeat;
+  //   background-size: contain;
+  // }
