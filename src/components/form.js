@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import Results from './results';
 
@@ -8,6 +7,7 @@ class Form extends Component {
     this.state = {
       stockTerm: '',
       age: '',
+      riskTolerance: '',
       showRes: false,
     };
   }
@@ -24,6 +24,10 @@ class Form extends Component {
     this.setState({ stockTerm: event.target.value });
   }
 
+  onToleranceChange = (event) => {
+    this.setState({ riskTolerance: event.target.value });
+  }
+
   onSubmit = () => {
     this.setState({ showRes: true });
   }
@@ -35,6 +39,13 @@ class Form extends Component {
         {/* <div id="fields"> */}
         Your Age: <input onChange={this.onAgeChange} value={this.state.age} />
         Stock Symbol: <input onChange={this.onStockChange} placeholder="(e.x. AAPL for Apple)" value={this.state.stockTerm} />
+        Risk Tolerance:
+        <div id="riskOptions" onChange={this.onToleranceChange}>
+          <input type="radio" value="Low" name="riskTolerance" /> Low
+          <input type="radio" value="Medium" name="riskTolerance" /> Medium
+          <input type="radio" value="High" name="riskTolerance" /> High
+        </div>
+
         {/* </div> */}
         <div role="button" id="submit-button" tabIndex={0} onClick={this.onSubmit}>
           Submit
@@ -43,6 +54,7 @@ class Form extends Component {
           <Results
             stock={this.state.stockTerm}
             age={this.state.age}
+            riskTolerance={this.state.riskTolerance}
           />
         ) : (
           <div />

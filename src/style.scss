@@ -21,6 +21,13 @@ body, html {
     margin-bottom: 3%;
   }
 
+  #riskOptions{
+    width: 30%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+  }
+
   #submit-button{
     margin-top: 2%;
     border: 1px solid #000000; 
